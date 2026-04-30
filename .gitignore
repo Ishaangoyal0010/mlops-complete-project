@@ -6,4 +6,4 @@ mlruns/
 artifacts/
 logs/
 mlflow.db
-
+.dockerignore
