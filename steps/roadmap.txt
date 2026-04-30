@@ -1,0 +1,66 @@
+COMPLETE STEP-BY-STEP ROADMAP
+
+🔹 PHASE 1: Project Setup
+
+Step 1: Project structure + environment
+Create folders
+Setup virtual environment
+Install dependencies
+
+Step 2: Train simple ML model
+Use any dataset (simple)
+Train model
+Save as .pkl
+
+Step 3: Build API
+(using FastAPI)
+Load model
+Create /predict endpoint
+Test locally
+
+🔹 PHASE 2: Containerization and experiment tracking(MLflow)
+
+Step 4: Add experiment tracking
+(using MLflow)
+Track parameters
+Save models
+
+Step 5: Dockerize app
+(using Docker)
+Write Dockerfile
+Build image
+Run container
+
+🔹 PHASE 3: AWS Integration
+
+Step 6: Move model to cloud
+(using Amazon S3)
+Upload model
+Modify app to download from S3
+
+Step 7: Deploy backend
+(using Amazon EC2)
+Launch EC2
+Install Docker
+Run container
+
+🔹 PHASE 4: Frontend
+
+Step 8: Build UI
+(using Streamlit)
+Input form
+Call FastAPI
+Show prediction
+
+🔹 PHASE 5: Integration Layer
+
+Step 9: CI/CD pipeline
+(using GitHub Actions)
+Auto build Docker
+Auto deploy to EC2
+
+Step 10: Monitoring
+(using Amazon CloudWatch)
+Logs
+Errors
+Health tracking
