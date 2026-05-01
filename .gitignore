@@ -7,3 +7,4 @@ artifacts/
 logs/
 mlflow.db
 .dockerignore
+aws/

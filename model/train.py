@@ -11,6 +11,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import r2_score, mean_absolute_error
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
+from utils.s3_utils import upload_model
 
 
 # 1. Load Data
@@ -165,6 +166,9 @@ if rf_score > lr_score:
 else:
     best_model      = lr_model
     best_model_name = "Linear Regression"
+    
+print(f"\nBest Model: {best_model_name}")
+    
 
 artifact_dir = os.path.join(BASE_DIR, "artifacts")
 os.makedirs(artifact_dir, exist_ok=True)
@@ -173,6 +177,7 @@ model_path = os.path.join(artifact_dir, "best_model.pkl")
 with open(model_path, "wb") as f:
     pickle.dump(best_model, f)
 
-print(f"\nBest Model: {best_model_name}")
-print(f"Saved to:   {model_path}")
+# 15. Upload to S3
+upload_model(model_path, "best_model.pkl")
+
 print("\nRun  'mlflow ui'  in your terminal to view the dashboard.")

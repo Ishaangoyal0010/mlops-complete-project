@@ -5,3 +5,5 @@ pandas==2.2.2
 scikit-learn==1.4.2
 mlflow
 python-multipart # added because of file uploads in FastAPI(chatpgt)
+boto3==1.28.57
+botocore==1.31.57

@@ -1,22 +1,33 @@
 import os
 import pickle
+from mlflow.server import app
 import numpy as np
 import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+# 1. Initialize FastAPI app
+app = FastAPI(title="Car Price Predictor")
 
-# 1. Load Model
+# 2. Load Model
 
+from utils.s3_utils import download_model
+model = None
+@app.on_event("startup")
+def load_model():
+    global model
+    download_model()
+    
+    with open("artifacts/best_model.pkl", "rb") as f:
+        model = pickle.load(f)
+
+'''
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 model_path = os.path.join(BASE_DIR, "artifacts", "best_model.pkl")
 
 with open(model_path, "rb") as f:
     model = pickle.load(f)
-
-# 2. App
-
-app = FastAPI(title="Car Price Predictor")
+'''
 
 # 3. Input Schema
 
