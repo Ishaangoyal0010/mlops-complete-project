@@ -12,18 +12,18 @@ Use any dataset (simple)
 Train model
 Save as .pkl
 
-Step 3: Build API
+Step 3: Add experiment tracking
+(using MLflow)
+Track parameters
+Save models
+
+Step 4: Build API
 (using FastAPI)
 Load model
 Create /predict endpoint
 Test locally
 
-🔹 PHASE 2: Containerization and experiment tracking(MLflow)
-
-Step 4: Add experiment tracking
-(using MLflow)
-Track parameters
-Save models
+🔹 PHASE 2: Containerization
 
 Step 5: Dockerize app
 (using Docker)
@@ -67,5 +67,3 @@ Health tracking
 
 
 
-torest branchna,e from master to main
- git branch -M main

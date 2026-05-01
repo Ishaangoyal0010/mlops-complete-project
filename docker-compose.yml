@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  backend:
+    image: ishaan0010/complete_project:v1
+    ports:
+      - "8000:8000"
+
+  frontend:
+    image: ishaan0010/streamlit_carapp:v2
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend

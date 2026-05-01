@@ -1,45 +1,5 @@
-> - terminal
-# - code
-1. Create project folder
-
-mlops-project/
-
-│___data/
-|	-data.csv
-	-clean_data.csv
-├── app/
-│       -app.py
-├── model/
-	-train.py
-├── artifacts/
-	-model.pkl
-├── notebooks/
-	-eda.py
-	-feature_engineering.py
-	-model_experiments.py
-
-2. Open terminal inside VS Code
-3. Run commands there to create new env	
-
->python -m venv venv
-venv\Scripts\activate 
-
->Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-
->.\venv\Scripts\Activate.ps1
-
-(venv) prefix should be there after this in terminal
-
-4.run a trial app.py
-
-#from fastapi import FastAPI
-app = FastAPI()
-@app.get("/")
-def home():
-    return {"message": "API is working"}
-
->pip install fastapi uvicorn scikit-learn pandas
->uvicorn app.app:app --reload
+VIRTUAL ENVIRONMENT SETUP✔️
+requirements.txt file created✔️
 
 5.create notebooks clean and perform eda on old data
 
@@ -54,11 +14,19 @@ data.to_csv(data_path, index=False)
     pickle.dump(model, f)
 print("Model trained and saved successfully!")
 
-8.Build API (using FastAPI)
+8.create requirements.txt file and add dependencies there 
+  create .gitignore file and add venv/ mlruns/ __pycache__/ artifacts/ .dockerignore to it (to ignore these files in git)
 
-9.Load model and Create /predict endpoint and Test locally
+9. first push to github (after model saving) 
+>git add .
+>git commit -m "Initial commit - model training and saving"
+>git remote add origin https://github.com/yourusername/your-repo.git
+>git push origin main
+(to rest branch name from master to main : > git branch -M main)
+
+10.Build API (using FastAPI)
+
+11.Load model and Create /predict endpoint and Test locally
 http://127.0.0.1:8000/docs a UI will open where you can test the API
 Status code 200 means API is working fine
 
-10. Create requirements.txt file and add all dependencies there
->pip freeze requirements.txt

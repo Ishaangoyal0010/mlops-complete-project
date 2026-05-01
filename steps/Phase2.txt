@@ -1,0 +1,33 @@
+DATA PREPARATION✔️
+EDA✔️
+TRAINING ✔️
+EXPERIMENT TRACKING✔️
+MODEL SAVING✔️
+API DEVELOPMENT✔️
+
+
+12. second push to github(after API development)
+(first push was after model saving)
+
+13. dockerize app (write Dockerfile)
+# Dockerfile
+FROM python:3.11-slim
+WORKDIR /app 
+COPY . .
+RUN pip install --no-cache-dir -r requirements.txt
+EXPOSE 8000
+CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "8000"]
+
+(add .dockerignore file to ignore unnecessary files in docker build like .git/ venv/ __pycache__/ mlruns/ artifacts/ .gitignore etc.)
+
+14. Build and run docker container
+>docker build -t mlops-app .
+>docker run -d -p 8000:8000 mlops-app
+
+15. push docker image to Docker Hub
+>docker login
+>docker tag mlops-app yourusername/mlops-app:v1
+>docker push yourusername/mlops-app:v1
+
+16. third push to github (dockerization)
+
