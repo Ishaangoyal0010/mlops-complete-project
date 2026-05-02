@@ -1,0 +1,23 @@
+streamlit for frontend ✔️
+docker-compose for backend and frontend ✔️
+
+24. writing utils for s3 upload and download
+
+    utils/s3_utils.py
+    functions to upload and download files from s3 using boto3
+
+25. s3 upload for model artifact
+
+    create s3 bucket
+    add boto3 to requirements.txt
+    write upload function in utils/s3_utils.py
+    call upload function in train.py after saving model to upload model to s3
+
+26. s3 download for model loading in backend
+
+    write download function in utils/s3_utils.py
+    call download function in app.py before loading model
+
+27. 6th push to github with all files and documentation(5th push was for docker-compose updation)
+    (Added S3 upload/download functionality for model artifacts)
+

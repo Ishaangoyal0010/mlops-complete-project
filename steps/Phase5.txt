@@ -1,0 +1,23 @@
+s3 integration for model artifacts ✔️
+
+28. EC2 deployment of backend and frontend 
+    - create EC2 instance and set up security groups by adding inboud rules for ports 22(ssh), 8000(fastapi) and 8501(streamlit)
+    - create IAM role with S3 access and attach to EC2 instance
+    (actions -> security -> IAM role -> create role -> EC2 -> attach policies -> AmazonS3FullAccess)
+    - install docker.io and docker-compose
+    >sudo usermod -aG docker ubuntu
+    (as docker requires sudo permission)
+    - pull image from dockerhub
+    	>docker pull ishaan0010/complete_project:latest
+    	>docker pull ishaan0010/streamlit_carapp:latest
+    - pull github repo to get docker-compose.yml
+    	>git clone https://github.com/ishaan0010/complete_project.git
+            >cd complete_project
+    - run docker compose up -d .....to start backend and frontend(docker compose not docker-compose as ec2 has docker compose plugin)
+    Images pulled from Docker Hub ✅
+    Network created ✅
+    FastAPI + Streamlit both running ✅
+
+    - test by accessing http://your-ec2-ip:8501 for frontend and http://your-ec2-ip:8000 for backend
+
+29. 7th push to github with EC2 deployment instructions in README.md

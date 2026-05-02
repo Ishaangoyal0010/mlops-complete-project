@@ -21,13 +21,13 @@ CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "8000"]
 (add .dockerignore file to ignore unnecessary files in docker build like .git/ venv/ __pycache__/ mlruns/ artifacts/ .gitignore etc.)
 
 14. Build and run docker container
->docker build -t mlops-app .
->docker run -d -p 8000:8000 mlops-app
+>docker build -t complete_project .
+>docker run -d -p 8000:8000 complete_project
 
 15. push docker image to Docker Hub
 >docker login
->docker tag mlops-app yourusername/mlops-app:v1
->docker push yourusername/mlops-app:v1
+>docker tag complete_project ishaan0010/complete_project:v1
+>docker push ishaan0010/complete_project:v1
 
 16. third push to github (dockerization)
 

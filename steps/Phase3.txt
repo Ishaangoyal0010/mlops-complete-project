@@ -1,0 +1,53 @@
+dockerfile backend ✔️
+push to docker hub ✔️
+push to github ✔️
+
+17. made frontend app for model inference (streamlit_app.py)
+
+    configure api
+    input fields for features
+    button to trigger API call
+
+18. dockerfile for frontend
+
+    FROM python:3.9-slim
+    WORKDIR /app
+    COPY requirements.txt .
+    RUN pip install -r requirements.txt
+    COPY . .
+    EXPOSE 8501
+    CMD ["streamlit", "run", "streamlit_app.py"]
+
+19.  Build and run docker container
+      >docker build -t streamlit_carapp .
+      >docker run -d -p 8501:8501 streamlit_carapp
+
+20. push docker image to Docker Hub
+      >docker login
+      >docker tag streamlit_carapp ishaan0010/streamlit_carapp:v1
+      >docker push ishaan0010/streamlit_carapp:v1
+
+    push to docker hub ✔️
+    push to github ✔️
+
+21. docker-compose to run both backend and frontend together
+    .yml file
+
+    version: '3'
+    services:
+      backend:
+        build: ./backend
+        ports:
+          - "5000:5000"
+      frontend:
+        build: ./frontend
+        ports:
+          - "8501:8501"
+        depends_on:
+          - backend
+
+22. run with docker-compose up
+    (test the full application)
+
+23. 4th push to github with all files and documentation
+    (Added Docker Compose setup for FastAPI and Streamlit)
