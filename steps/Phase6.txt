@@ -1,0 +1,14 @@
+EC2 deployment✔️
+tested by accessing frontend and backend urls on browser ✔️
+
+30.deploying CI/CD pipeline to EC2 using github actions
+    - create secrets in github for EC2 deployment (EC2_USER, EC2_HOST, EC2_SSH_KEY)
+    - update deploy.yml workflow in .github/workflows to add step for ssh into EC2
+    - add deploy step in github actions workflow to ssh into EC2 and run docker compose commands to pull images and start containers
+    - commit and push changes to github
+    - check github actions for successful deployment and test by accessing frontend and backend urls on browser
+
+
+
+
+    ---------PROJECT COMPLETE ✅--------------
