@@ -11,7 +11,7 @@ s3 integration for model artifacts ✔️
     	>docker pull ishaan0010/complete_project:latest
     	>docker pull ishaan0010/streamlit_carapp:latest
     - pull github repo to get docker-compose.yml
-    	>git clone https://github.com/ishaan0010/complete_project.git
+    	>git clone https://github.com/ishaan0010/mlops-complete-project.git
             >cd complete_project
     - run docker compose up -d .....to start backend and frontend(docker compose not docker-compose as ec2 has docker compose plugin)
     Images pulled from Docker Hub ✅

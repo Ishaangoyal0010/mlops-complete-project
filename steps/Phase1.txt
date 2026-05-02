@@ -20,7 +20,7 @@ print("Model trained and saved successfully!")
 9. first push to github (after model saving) 
 >git add .
 >git commit -m "Initial commit - model training and saving"
->git remote add origin https://github.com/yourusername/your-repo.git
+>git remote add origin https://github.com/yourusername/mlops-complete-project.git
 >git push origin main
 (to rest branch name from master to main : > git branch -M main)
 
