@@ -152,11 +152,6 @@ Automated using GitHub Actions:
 * 🔹 Feature Store integration
 * 🔹 Auto-scaling infrastructure
 
----
-
-## 🙌 Author
-
-**Ishaan Goyal**
 
 ---
 
